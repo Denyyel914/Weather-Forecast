@@ -43,6 +43,7 @@ const Weather = () => {
     return (
     <Form>
         <Container>
+        <h2>Weather App</h2>
         <Form>
   <Form.Row>
     <Col>
