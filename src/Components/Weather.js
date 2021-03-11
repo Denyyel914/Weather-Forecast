@@ -60,20 +60,34 @@ const Weather = () => {
        
         <div className="grid">
         {
-            key !== null  && (
-                key.map(dataMap => 
-
-                
-                <Card data={dataMap.weather[0].description} date={dataMap.dt_txt} imgSrc={dataMap.weather[0].icon} temp={Math.floor(dataMap.main.temp - 273.15)}/>
-               )
+            key !== null && (
+                key.map((dataMap,index) => {
+                    if(index % 8 === 0) {
+                        return <Card data={dataMap.weather[0].description} date={dataMap.dt_txt} imgSrc={dataMap.weather[0].icon} temp={Math.floor(dataMap.main.temp - 273.15)}/>
+                    } else {
+                        return null
+                    }
+                })
             )
-           
+            
             }
-        </div>
+        </div> 
+        {/* {
+            key !== null &&(
+            key.map((dataMap,index => {
+                if(index % 4 ===  0) {
+                    return <Card data={dataMap.weather[0].description} date={dataMap.dt_txt} imgSrc={dataMap.weather[0].icon} temp={Math.floor(dataMap.main.temp - 273.15)}/>
+
+                } else {
+                    return null;
+                }
+            }))
+            )
+        } */}
 
         </Container>
     </Form>
-    )
+    ) /* return ending */
 }
 
 
